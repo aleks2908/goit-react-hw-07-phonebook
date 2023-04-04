@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export const Contact = ({ contact, onDelete }) => {
   return (
     <li className={css.contactListItem}>
-      {contact.name}: {contact.number}{' '}
+      {contact.name}: {contact.phone}
       <button
         onClick={() => onDelete(contact.id)}
         className={css.button}
@@ -21,7 +21,7 @@ Contact.propTypes = {
   contact: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
 };

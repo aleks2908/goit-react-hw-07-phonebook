@@ -3,3 +3,9 @@
   font-size: 25px;
   color: #010101;
 }
+
+.spiner {
+  position: absolute;
+  top: 0;
+  margin-left: 70px;
+}

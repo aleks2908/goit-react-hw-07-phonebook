@@ -1,10 +1,8 @@
 import css from './ContactForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { object, string, number } from 'yup';
-// import { nanoid } from 'nanoid';
-
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/operations';
 import { getContacts } from '../../redux/selectors';
 
 export const ContactForm = () => {
@@ -24,10 +22,9 @@ export const ContactForm = () => {
 
     dispatch(
       addContact({
-        values,
-        // name: values.name,
-        // number: values.number,
-        // id: nanoid(),
+        // values,
+        name: values.name,
+        phone: values.number,
       })
     );
 

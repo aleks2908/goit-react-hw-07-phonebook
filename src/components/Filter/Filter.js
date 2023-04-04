@@ -10,7 +10,6 @@ export const Filter = () => {
 
   return (
     <>
-      <h3>Contacts</h3>
       <label>
         Find contacts by name <br />
         <input
