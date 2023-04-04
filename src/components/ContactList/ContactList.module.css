@@ -1,3 +1,18 @@
-.contactList {
-  padding: 30px 0;
+.contactListTable {
+  border-collapse: collapse;
+  margin: 30px 0;
 }
+
+table td {
+  padding: 6px 20px;
+  border: 1px solid #2a2a2a;
+}
+
+tr:nth-child(even) {
+  background-color: #f1eeee;
+}
+
+/* tr:hover {
+  background-color: tomato;
+  color: white;
+} */

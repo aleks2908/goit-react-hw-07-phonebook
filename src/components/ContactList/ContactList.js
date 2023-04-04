@@ -22,10 +22,14 @@ export const ContactList = () => {
   const filteredContactList = filtredContacts();
 
   return (
-    <ul className={css.contactList}>
-      {filteredContactList.map(contact => (
-        <Contact key={contact.id} contact={contact} onDelete={onDelete} />
-      ))}
-    </ul>
+    <table className={css.contactListTable}>
+      <tbody>
+        {filteredContactList.map(contact => (
+          <tr key={contact.id} className={css.contactListItem}>
+            <Contact contact={contact} onDelete={onDelete} />
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };

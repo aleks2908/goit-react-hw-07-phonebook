@@ -4,16 +4,17 @@ import PropTypes from 'prop-types';
 
 export const Contact = ({ contact, onDelete }) => {
   return (
-    <li className={css.contactListItem}>
-      <b>{contact.name}</b>: {contact.phone}
-      <button
+    <>
+      <td>{contact.name}</td>
+      <td>{contact.phone}</td>
+      <td
         onClick={() => onDelete(contact.id)}
-        className={css.button}
+        className={css.deleteButton}
         id={contact.id}
       >
         Delete
-      </button>
-    </li>
+      </td>
+    </>
   );
 };
 
