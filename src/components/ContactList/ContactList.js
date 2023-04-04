@@ -3,6 +3,7 @@ import { Contact } from '../Contact/Contact';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/operations';
 import { getFilter, getContacts } from '../../redux/selectors';
+import css from './ContactList.module.css';
 
 export const ContactList = () => {
   const filter = useSelector(getFilter);
@@ -21,7 +22,7 @@ export const ContactList = () => {
   const filteredContactList = filtredContacts();
 
   return (
-    <ul>
+    <ul className={css.contactList}>
       {filteredContactList.map(contact => (
         <Contact key={contact.id} contact={contact} onDelete={onDelete} />
       ))}

@@ -1,5 +1,7 @@
 .contactListItem {
   line-height: 50px;
+  display: flex;
+  align-items: center;
 }
 
 .button {
