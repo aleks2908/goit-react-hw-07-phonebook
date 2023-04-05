@@ -15,6 +15,6 @@ export const selectFilteredContactList = createSelector(
         contact.name.toLowerCase().includes(normalizedFilter)
       );
     };
-    return filtredContacts();
+    return filtredContacts().sort((a, b) => a.name.localeCompare(b.name));
   }
 );
