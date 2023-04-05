@@ -1,9 +1,16 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { changeFilter } from 'redux/filterSlice';
-import { selectFilter } from '../../redux/selectors';
+import {
+  selectContacts,
+  selectFilter,
+  selectFilteredContactList,
+} from '../../redux/selectors';
 
 export const Filter = () => {
   const value = useSelector(selectFilter);
+  const filteredContactsLength = useSelector(selectFilteredContactList).length;
+  const contactsLength = useSelector(selectContacts).length;
+
   const dispatch = useDispatch();
 
   const changeFieldFilter = e => dispatch(changeFilter(e.currentTarget.value));
@@ -11,7 +18,13 @@ export const Filter = () => {
   return (
     <>
       <label>
-        Find contacts by name <br />
+        Find contacts by name
+        {filteredContactsLength !== contactsLength && (
+          <>
+            :&nbsp;<b>{filteredContactsLength}</b>
+          </>
+        )}
+        <br />
         <input
           value={value}
           type="text"
