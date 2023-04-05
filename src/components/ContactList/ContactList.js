@@ -10,7 +10,9 @@ export const ContactList = () => {
 
   const onDelete = contactId => dispatch(deleteContact(contactId));
 
-  const filteredContactList = useSelector(selectFilteredContactList);
+  const filteredContactList = useSelector(selectFilteredContactList).sort(
+    (a, b) => a.name.localeCompare(b.name)
+  );
 
   return (
     <table className={css.contactListTable}>
