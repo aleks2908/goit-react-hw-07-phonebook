@@ -8,7 +8,16 @@ import { selectFilteredContactList } from 'redux/selectors';
 export const ContactList = () => {
   const dispatch = useDispatch();
 
-  const onDelete = contactId => dispatch(deleteContact(contactId));
+  const onDelete = (contactId, contactName) => {
+    // eslint-disable-next-line no-restricted-globals
+    const shouldDelete = confirm(
+      `"Do you really want to remove ${contactName}?"`
+    );
+
+    if (shouldDelete) {
+      dispatch(deleteContact(contactId));
+    }
+  };
 
   const filteredContactList = useSelector(selectFilteredContactList);
 

@@ -11,7 +11,7 @@ export const Contact = ({ contact, onDelete }) => {
         <a href={phoneNumber}>{contact.phone}</a>
       </td>
       <td
-        onClick={() => onDelete(contact.id)}
+        onClick={() => onDelete(contact.id, contact.name)}
         className={css.deleteButton}
         id={contact.id}
       >
