@@ -2,7 +2,7 @@ import React from 'react';
 import css from './Contact.module.css';
 import PropTypes from 'prop-types';
 
-export const Contact = ({ contact, onDelete }) => {
+export const Contact = ({ contact, showModal }) => {
   const phoneNumber = `tel:${contact.phone}`;
   return (
     <>
@@ -11,7 +11,7 @@ export const Contact = ({ contact, onDelete }) => {
         <a href={phoneNumber}>{contact.phone}</a>
       </td>
       <td
-        onClick={() => onDelete(contact.id, contact.name)}
+        onClick={() => showModal(contact.id, contact.name)}
         className={css.deleteButton}
         id={contact.id}
       >
@@ -27,5 +27,5 @@ Contact.propTypes = {
     name: PropTypes.string.isRequired,
     phone: PropTypes.string.isRequired,
   }).isRequired,
-  onDelete: PropTypes.func.isRequired,
+  showModal: PropTypes.func.isRequired,
 };
